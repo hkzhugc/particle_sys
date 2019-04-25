@@ -78,8 +78,8 @@ int window_height = 0;
 int window_width = 0;
 
 //camera position
-float center[] = { 0, 0, 0 };
-float eye[] = { 0, 0, 10 };
+float look_at[] = { 0, 0, 0 };
+float camera_pos[] = { 0, 0, 10 };
 
 clock_t clock_time;
 
@@ -107,7 +107,7 @@ void display()
 	glClearColor(0, 0, 0, 1);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(eye[0], eye[1], eye[2], center[0], center[1], center[2], 0, 1, 0);
+	gluLookAt(camera_pos[0], camera_pos[1], camera_pos[2], look_at[0], look_at[1], look_at[2], 0, 1, 0);
 	
 	firework.render();
 	fountain.render();
